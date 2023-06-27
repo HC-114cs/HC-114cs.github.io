@@ -1,1423 +1,338 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang=en>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:300,300italic,400,400italic,700,700italic%7CGeorgia:300,300italic,400,400italic,700,700italic%7CNoto+Serif+SC:300,300italic,400,400italic,700,700italic%7CFira+Code+Retina:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ayahccw.xyz","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="Delocalized π orbital">
-<meta property="og:type" content="website">
-<meta property="og:title" content="非键轨道">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Delocalized π orbital.">
 <meta property="og:url" content="https://ayahccw.xyz/index.html">
-<meta property="og:site_name" content="非键轨道">
-<meta property="og:description" content="Delocalized π orbital">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="Delocalized π orbital.">
+<meta property="og:locale" content="en_US">
 <meta property="article:author" content="C. AyaHC">
 <meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://ayahccw.xyz/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>非键轨道</title>
-  
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">非键轨道</h1>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">Electrons Flowing Inside</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-  </ul>
-</nav>
-
-
-
-
-</div>
+    
+    
+      
         
+          <link rel="shortcut icon" href="/images/favicon-32x32-next.png">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/apple-touch-icon-next.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+        
+      
+    
+    <!-- title -->
+    <title>Delocalized π orbital.</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+    <div class="content index py4 h-card">
+        
+          <header id="header">
+  <a class="u-url u-uid" href="/">
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="C. AyaHC"
-      src="/images/takina.jpeg">
-  <p class="site-author-name" itemprop="name">C. AyaHC</p>
-  <div class="site-description" itemprop="description">Delocalized π orbital</div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">20</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">23</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/HC-114cs" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HC-114cs" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:ayana7mi1240@qq.com" title="E-mail → mailto:ayana7mi1240@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/he-xiao-ye-39" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;he-xiao-ye-39" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/12378091" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;12378091" rel="noopener" target="_blank"><i class="fa fa-play-circle fa-fw"></i></a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Links
+    
+      <img id="logo" alt class="u-logo" src="/images/takina.jpeg" />
+    
+  
+    <div id="title">
+      <h1 class="p-name">Delocalized π orbital.</h1>
     </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://tkhcyalumedance.wordpress.com/" title="https:&#x2F;&#x2F;tkhcyalumedance.wordpress.com&#x2F;" rel="noopener" target="_blank">TkH</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://www.fengyu-poi.cn/" title="https:&#x2F;&#x2F;www.fengyu-poi.cn&#x2F;" rel="noopener" target="_blank">Sdk</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://jfwilliamson.me/" title="https:&#x2F;&#x2F;jfwilliamson.me&#x2F;" rel="noopener" target="_blank">Yui</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://jiahuinie.com/" title="https:&#x2F;&#x2F;jiahuinie.com&#x2F;" rel="noopener" target="_blank">Nie</a>
-        </li>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-2x"></i></a>
+      </li>
+      <!--
+     --><li><a href="/">Home</a></li><!--
+   --><!--
+     --><li><a href="/about/">About</a></li><!--
+   --><!--
+     --><li><a href="/archives/">Writing</a></li><!--
+   --><!--
+     --><li><a href="/bio/">Projects</a></li><!--
+   -->
     </ul>
   </div>
+</header>
 
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
+        
+        <section id="about" class="p-note">
+  
+    <p>This page is presented by the Hexo theme 'Cactus', which was temporarily replaced by the author Ayanami HC from the theme 'NeXT', after getting tired of the fancy styles and features of common blog themes - it's now the cleanest and most beautiful theme he's found. At least for now, HC thinks that he doesn't need any advanced features for his blog posts, just a faithful presentation of the text. In particular, HC thinks the style of this homepage is appropriate.</p>
 
+  
+  
+    <p>
+      Find me on
+      
+      
+      
+        
+        
+          <a class="icon u-url" target="_blank" rel="noopener me" href="http://github.com/HC-114cs" aria-label="github" title="github">
+            <i class="fa-brands fa-github"></i><!--
+      ---></a><!--
+    ---><!--
+    --->, 
+        
+      
+        
+        
+          <a class="icon u-url" target="_blank" rel="noopener me" href="https://twitter.com/kano_2525" aria-label="twitter" title="twitter">
+            <i class="fa-brands fa-twitter"></i><!--
+      ---></a><!--
+    ---><!--
+    --->, 
+        
+      
+        
+        
+          <a class="icon u-url" target="_blank" rel="noopener me" href="https://space.bilibili.com/12378091" aria-label="bilibili" title="bilibili">
+            <i class="fa-brands fa-bilibili"></i><!--
+      ---></a><!--
+    ---><!--
+    --->, 
+        
+      
+        
+        
+          <a class="icon u-url" target="_blank" rel="noopener me" href="https://www.zhihu.com/people/he-xiao-ye-39" aria-label="zhihu" title="zhihu">
+            <i class="fa-brands fa-zhihu"></i><!--
+      ---></a><!--
+    ---><!--
+    ---> and 
+        
+      
+        
+        
+          <a class="icon u-email" target="_blank" rel="noopener" href="mailto:dngchngw@gmail.com" aria-label="mail" title="mail">
+            <i class="fa-solid fa-envelope"></i><!--
+      ---></a>
+        <!--
+    --->.
+        
+      
+    </p>
+  
+</section>
 
-    </header>
-
+<section id="writing">
+  <span class="h1"><a href="/archives/">Writing</a></span>
+  
+  <span class="h2">Topics</span>
+  <span class="widget tagcloud">
+    <a href="/tags/A-SOUL/" style="font-size: 13.33px;">A-SOUL</a> <a href="/tags/Computer-System/" style="font-size: 10px;">Computer System</a> <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/MornHub/" style="font-size: 16.67px;">MornHub</a> <a href="/tags/%E3%83%B2%E3%82%BF%E8%8A%B8/" style="font-size: 13.33px;">ヲタ芸</a> <a href="/tags/%E4%BA%BA%E6%96%87%E7%A4%BE%E7%A7%91/" style="font-size: 13.33px;">人文社科</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">动画</a> <a href="/tags/%E6%96%87%E5%AD%A6/" style="font-size: 20px;">文学</a> <a href="/tags/%E7%89%A9%E7%90%86%E5%8C%96%E5%AD%A6/" style="font-size: 13.33px;">物理化学</a> <a href="/tags/%E7%94%9F%E4%BF%A1/" style="font-size: 10px;">生信</a> <a href="/tags/%E8%AE%A1%E7%AE%97/" style="font-size: 13.33px;">计算</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">读书报告</a> <a href="/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" style="font-size: 10px;">量子力学</a> <a href="/tags/%E9%9A%8F%E8%AE%B0/" style="font-size: 16.67px;">随记</a>
+  </span>
+  <span class="h2">Most recent</span>
+  
+  <ul class="post-list">
     
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+    
+      
+    
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2023-02-01T06:58:12.000Z" class="dt-published" itemprop="datePublished">2023-02-01</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/p/81d60481.html">The Dream of a Godless Sea</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2023-01-06T14:55:20.000Z" class="dt-published" itemprop="datePublished">2023-01-06</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/p/551078a4.html">ICS Lab 最终总结</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2022-11-15T10:04:23.000Z" class="dt-published" itemprop="datePublished">2022-11-15</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/p/7bc8bb22.html">苦痛和疾病的社会根源：现代中国的抑郁、神经衰弱和病痛</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2022-07-24T13:39:32.000Z" class="dt-published" itemprop="datePublished">2022-07-24</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/p/25b0f21e.html">天亮之前应休憩</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2022-06-22T05:48:14.000Z" class="dt-published" itemprop="datePublished">2022-06-22</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/p/a9bd3a74.html">人工智能预测蛋白质进展</a>
+    
+
+
+</span>
+      </li>
+    
+  </ul>
+  
+</section>
+
+
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    C. AyaHC
   </div>
-  <div class="reading-progress-bar"></div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/81d60481.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/81d60481.html" class="post-title-link" itemprop="url">The Dream of a Godless Sea</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-02-01 14:58:12" itemprop="dateCreated datePublished" datetime="2023-02-01T14:58:12+08:00">2023-02-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-28 01:37:25" itemprop="dateModified" datetime="2023-05-28T01:37:25+08:00">2023-05-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B0%8F%E8%AF%B4/" itemprop="url" rel="index"><span itemprop="name">小说</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/p/81d60481.html" class="post-meta-item twikoo_visitors" data-flag-title="The Dream of a Godless Sea" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>It all sprang from my love for her.</p>
-<p>We met on the shore at low tide. She wore a schoolgirl uniform and waved to me from a distance. The place was desolate and forlorn. I hastened my steps cautiously, feeling the slanting sunlight warm my face. "Hayasaka, today is another day to catch the sunset!" As I gazed into her eyes again, the sun in her pupils seemed to scorch me anew.</p>
-<p>She still wore white socks on the beach. With her pure white shirt, she took on the silhouette of twilight... "You're staring again." She kicked my calf as a penalty, and I didn't want to forget this. Then everything happened as usual, except that she brought a new sake this time. I didn't like the taste very much, it felt like a blob of chaos assaulting my stomach and then scrambling my neurons. She didn't seem to mind, though. She clinked glasses with me and then smiled as she watched me drink in agony. I was more preoccupied with our love, when the moon gradually emerged and she entered the cold hue.</p>
-<p>As if cursed by fate, I lost my reason in that moonlight. I clung to her tight, spilling wine on her skirt. We crashed onto the beach like waves. The wet skirt was laid on the still warm sand to dry, and now she was pale and cold. I loved her pale and cold, so I couldn't control myself. But she covered her mouth with her hand and bore it with tears in her eyes. "Hayasaka." She trembled as she called my name. "I love you so much." I kissed the mouth that uttered her love for me. The surging waves peaked at midnight. The moon was veiled by clouds, and the stars quivered and howled. We were shrouded by this sound.</p>
-<p>In the final moment of tight embrace, we vowed to love each other like this forever. Then our limp bodies collapsed on the sand and rested until dawn. When she woke up, I still couldn't help licking the sand on her clothes. She scolded me again, and I said it was like my nature, and then promised to help her clean up like a normal person. I forgot to set off last night's fireworks, so I lit them at the spot where we had released our fluids. Before the sky brightened completely, we, who were as deep as the deep horizon and cold-colored, fled from this beach.</p>
-<p>After that day, I grew disgusted with this sea. I don't know if it's because I've been there 23 times, or because of that ill-timed fireworks. I regretted and feared, as if sensing that if I went there again, I would be punished by some god.</p>
-<p>But there was no other god. Maybe in a blurred consciousness, she whispered in my ear. The sound of the tide receded farther and farther away, and in the same fading memory, her face turned cold. I don't remember when it started, but our images vanished in the blue moment before dawn. Our shadows lost all their light ratio and blended into that Rayleigh scattering.</p>
-<p>I woke up. In front of me was a scene that had seen 114514 Epochs, everything was born out of ImportError: No module named '��'</p>
-<p>It all sprang from my love for her.</p>
-<p>Before dusk came again, I was dazzled by the light reflected from the floor and suddenly wanted to invite her to a popular pub nearby.</p>
-<blockquote>
-<p>English version created by GPT</p>
-</blockquote>
-<h1 id="群星目力的夜晚">群星目力的夜晚</h1>
-<p>一切是因对她的爱而生的。</p>
-<p>退潮的时候我们在岸上见面，她穿着学生式的制服，离得很远就向我招手。四下空旷得有些寂寥。我迎着那目光谨慎地加快脚步，低角度的日光照得脸上微热。“早坂君，今天又是个遇上晚霞的日子！”再次注视她的眼睛时，瞳孔里的落日似乎又要将我灼烧。</p>
-<p>即便是来到沙滩，她依旧穿了白色的小腿袜。连同纯白色的衬衣，带上了名为黄昏的轮廓……“你又在看了。”她踢到我的小腿表示惩罚，我不希望忘记这种事。之后，一切的发生如同惯例，只不过这回她带的是新的烧酒。我不大喜欢那种味道，就像一团混沌冲击了肠胃，而后要打乱神经元的连接。她却并不在意似的，与我碰杯，然后笑着看我遭罪般的饮用。我则更加惦记着与她的爱，当月亮逐渐显影，她进入那冷色调中。</p>
-<p>如同命运的诅咒，我在那月光中失去了理智。我抱紧她，酒洒在了她的裙子上。我们如浪花一样拍到沙滩上。湿了的裙子放在尚且温热的沙滩上晾干，现在的她是冷白色的，我深爱着冷白色的她，所以没法控制自己。可是她用手捂着嘴，近于流泪地承受着。“早坂。”她颤抖着叫我的名字，“我十分爱你。”我亲吻这一说出爱我的话语的嘴。翻涌的海浪涨至最高，是在午夜时分。月亮被云遮上，群星震颤着怒号，我们彼此笼罩在这种声音之下。</p>
-<p>在最后的紧紧相拥时刻，我们说要一直这样爱着对方。然后瘫软的身躯直接倒在沙滩上，休憩到了黎明。她醒来后，我还是不由自主地舔了她衣物上的沙子。她又斥责我，我说这就像我的天性，然后答应像正常人一样帮她清理。我忘了放昨晚的烟花，把它插在我们曾释放液体的位置点燃了。趁天还没完全亮起来，如那深沉的地平线一样深沉的、冷色的我们，逃离了这片海滩。</p>
-<p>那一天之后，我竟对这片海产生了厌烦。不知是因为已经去过23回，还是由于那不合时宜的烟花。我即懊悔又害怕，仿佛感觉到，再去那里时会受到神明的惩罚一般。</p>
-<p>可是，并没有其他的神明。或许是在意识模糊时，她曾在我耳边低语。潮水的声音越走越远，在同样远去的记忆中，她的面容变得冷峻起来。我不记得从何时起，回忆中的我们一并消失在天亮前的蓝调时刻。我们的影像失去一切的光比，汇入那片瑞利散射之中。</p>
-<p>我醒了。眼前是我已见过114514个Epoch的景色，一切是因 <code>ImportError: No module named '��'</code></p>
-<p>一切是因对她的爱(あい)而生的。</p>
-<p>黄昏再次到来之前，我被地板反射的光晃得出神，突然想约她去附近热门的酒馆。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/551078a4.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/551078a4.html" class="post-title-link" itemprop="url">ICS Lab 最终总结</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-01-06 22:55:20" itemprop="dateCreated datePublished" datetime="2023-01-06T22:55:20+08:00">2023-01-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-07 02:30:22" itemprop="dateModified" datetime="2023-01-07T02:30:22+08:00">2023-01-07</time>
-    </span>
-
-  
-    <span id="/p/551078a4.html" class="post-meta-item twikoo_visitors" data-flag-title="ICS Lab 最终总结" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          Introduction to Computer Systems. ~ from 2022.9 to 2023.1
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/p/551078a4.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/7bc8bb22.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/7bc8bb22.html" class="post-title-link" itemprop="url">苦痛和疾病的社会根源：现代中国的抑郁、神经衰弱和病痛</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-11-15 18:04:23 / 修改时间：18:19:31" itemprop="dateCreated datePublished" datetime="2022-11-15T18:04:23+08:00">2022-11-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">报告</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/p/7bc8bb22.html" class="post-meta-item twikoo_visitors" data-flag-title="苦痛和疾病的社会根源：现代中国的抑郁、神经衰弱和病痛" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          本书是凯博文夫妇于1980、1983年在湖南医科大学第二附属医院的精神科所作研究的成果。本书中详细的田野调查支持了凯博文关于躯体化、社会-躯体关系的理论，并希望以跨文化的人类学视角来考察病痛、疾病，以及它们与本地文化、社会的辩证关系。此外，它还提供了对“文革”后集体创伤的一种描述，带有其道德内涵。由于内容实在丰富，本文主要试图在精神疾病的理论方面（也就是作者的主要结论）谈自己的理解，没有能力分析更深层次的社会问题。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/p/7bc8bb22.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/25b0f21e.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/25b0f21e.html" class="post-title-link" itemprop="url">天亮之前应休憩</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-07-24 21:39:32" itemprop="dateCreated datePublished" datetime="2022-07-24T21:39:32+08:00">2022-07-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-25 20:30:55" itemprop="dateModified" datetime="2022-10-25T20:30:55+08:00">2022-10-25</time>
-    </span>
-
-  
-    <span id="/p/25b0f21e.html" class="post-meta-item twikoo_visitors" data-flag-title="天亮之前应休憩" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>4.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          在厦门之行过去一个月后，我又重拾了这篇非虚构作品。我想出了Encore这样的概念。这份Encore是否有它的意义。回想起来，它的确使很多事情变得圆满些，至少不会来不及作别。我也不再以将时间线填满作为最终作品的目标，毕竟一道告别的还有我的光棒生涯、一类创作生涯。记录是无法再现那些触动的，但记录也给人以机会，对现实进行剪辑和再创作。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/p/25b0f21e.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/a9bd3a74.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/a9bd3a74.html" class="post-title-link" itemprop="url">人工智能预测蛋白质进展</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-22 13:48:14" itemprop="dateCreated datePublished" datetime="2022-06-22T13:48:14+08:00">2022-06-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-25 20:23:08" itemprop="dateModified" datetime="2022-10-25T20:23:08+08:00">2022-10-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">报告</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/p/a9bd3a74.html" class="post-meta-item twikoo_visitors" data-flag-title="人工智能预测蛋白质进展" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>4.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>本文是笔者《软物质与硬科学》课程的小报告（2022.6）。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/p/a9bd3a74.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/8e86dee7.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/8e86dee7.html" class="post-title-link" itemprop="url">6.1 单纯的记录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-02 00:17:05" itemprop="dateCreated datePublished" datetime="2022-06-02T00:17:05+08:00">2022-06-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-19 20:18:05" itemprop="dateModified" datetime="2022-07-19T20:18:05+08:00">2022-07-19</time>
-    </span>
-
-  
-    <span id="/p/8e86dee7.html" class="post-meta-item twikoo_visitors" data-flag-title="6.1 单纯的记录" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>768</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          与早年最大的不同，可能就是越发显著的无聊感吧。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/p/8e86dee7.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/88carol.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/88carol.html" class="post-title-link" itemprop="url">5月10日只是平凡的一天</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-05-10 22:14:30" itemprop="dateCreated datePublished" datetime="2022-05-10T22:14:30+08:00">2022-05-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-25 20:24:02" itemprop="dateModified" datetime="2022-10-25T20:24:02+08:00">2022-10-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/p/88carol.html" class="post-meta-item twikoo_visitors" data-flag-title="5月10日只是平凡的一天" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          他们8点钟去湖心岛喝酒了，我想这是应有的环节。我想去找他们，或许见不到了，因为现在已是10点。没有不散的宴会，哪怕是破防宴会也一样。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/p/88carol.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/4a2a7947.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/4a2a7947.html" class="post-title-link" itemprop="url">加密文章试验</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-14 23:13:53" itemprop="dateCreated datePublished" datetime="2022-02-14T23:13:53+08:00">2022-02-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-15 19:27:59" itemprop="dateModified" datetime="2022-02-15T19:27:59+08:00">2022-02-15</time>
-    </span>
-
-  
-    <span id="/p/4a2a7947.html" class="post-meta-item twikoo_visitors" data-flag-title="加密文章试验" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>16</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          Here's something encrypted, password is required to continue reading.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/p/4a2a7947.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/cbbfbdd.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/cbbfbdd.html" class="post-title-link" itemprop="url">生活在夏日之前</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-01 22:49:30" itemprop="dateCreated datePublished" datetime="2022-02-01T22:49:30+08:00">2022-02-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-16 00:22:59" itemprop="dateModified" datetime="2022-02-16T00:22:59+08:00">2022-02-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/p/cbbfbdd.html" class="post-meta-item twikoo_visitors" data-flag-title="生活在夏日之前" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>9.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          最初想到的是“困在夏日之前”，第二天就被改为了“生活”——困，不也是生活的部分？至于“夏日之前”，我现在所处的应属于是；但季节是循环的，夏日终结以后，算不算是夏日之前？只是知道，不能总是怀念着那些夏日了，在“之前”总是有些期盼的意思——我的意思是，是时候准备去创造新的夏日。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/p/cbbfbdd.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ayahccw.xyz/p/9304a43.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/takina.jpeg">
-      <meta itemprop="name" content="C. AyaHC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="非键轨道">
-      <meta itemprop="description" content="Delocalized π orbital">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 非键轨道">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/p/9304a43.html" class="post-title-link" itemprop="url">双原子分子的热容曲线/小课题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-13 01:45:38" itemprop="dateCreated datePublished" datetime="2022-01-13T01:45:38+08:00">2022-01-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-19 20:22:26" itemprop="dateModified" datetime="2022-07-19T20:22:26+08:00">2022-07-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">报告</span></a>
-        </span>
-    </span>
-
-  
-    <span id="/p/9304a43.html" class="post-meta-item twikoo_visitors" data-flag-title="双原子分子的热容曲线/小课题" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="twikoo_visitors"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          本文是笔者在《化学中的数学》课的期末课题研究内容。对于没有学过物理化学的我来说，一开始觉得不易理解，但当为了这课题去查阅资料，立刻就发现了[小练习：转动热容].接下来看了统计物理的书，又发现解决问题需要的公式全都写在书上了，只需照着公式写程序就好。但讲报告的ddl在即，没有换题目的时间了，便只能在这上面想办法做得丰富些。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/p/9304a43.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 2021 – 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">C. AyaHC</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-      <span>站点总字数：</span>
-    <span title="站点总字数">78k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:11</span>
-  </span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/bio/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
   </div>
+</footer>
 
     </div>
-  </footer>
-
-  
-  <script size="300" alpha="0.2" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
-
-  
+    <!-- styles -->
 
 
 
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
 
 
-  
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
 
 
 
 
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+<!-- clipboard -->
 
 
-<script class="next-config" data-name="twikoo" type="application/json">{"enable":true,"visitor":true,"envId":"https://twikoo-for-blog-pl3dfl51o-hc-114cs.vercel.app/","el":"#twikoo-comments"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.twikoo.el)
-    .then(() => NexT.utils.getScript(
-      CONFIG.twikoo.jsUrl || 'https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js',
-      { condition: window.twikoo }
-    ))
-    .then(() => {
-      twikoo.init(CONFIG.twikoo);
-    });
-});
-</script>
-<style>
-.post-block, .comments {
-  overflow: visible;
-}
-.tk-owo-emotion {
-  display: inline-block;
-}
-</style>
+<script src="/js/main.js"></script>
 
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
 
 </body>
-<script type="text/javascript" src="/js/click_show_text.js"></script>
 </html>
-<!--单击显示文字-->
