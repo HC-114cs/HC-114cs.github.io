@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="这是我第一次干和“科学计算”相关的事。之前虽然一直惦记着Scientific Computation，但实际上连Import Numpy都没有干过。于是在这个作业的驱动(?)下，我写了第一个有用的Python程序。虽然结果的代码量很少，但过程实属是历尽坎坷，有一些记录的价值和趣味在。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="♥初体験♥数值求解一维谐振子本征问题">
+<meta property="og:url" content="https://ayahccw.xyz/2021/4f2e36c8.html">
+<meta property="og:site_name" content="非键轨道.">
+<meta property="og:description" content="这是我第一次干和“科学计算”相关的事。之前虽然一直惦记着Scientific Computation，但实际上连Import Numpy都没有干过。于是在这个作业的驱动(?)下，我写了第一个有用的Python程序。虽然结果的代码量很少，但过程实属是历尽坎坷，有一些记录的价值和趣味在。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://q.130014.xyz/2021/11/01/Figure-2021-11-01-201444.png">
+<meta property="og:image" content="https://q.130014.xyz/2021/10/31/fadcc72eabf47dd899ca9941c06a0f31.png">
+<meta property="article:published_time" content="2021-10-31T15:46:48.000Z">
+<meta property="article:modified_time" content="2023-06-27T16:02:36.161Z">
+<meta property="article:author" content="C. AyaHC">
+<meta property="article:tag" content="量子力学">
+<meta property="article:tag" content="物理化学">
+<meta property="article:tag" content="计算">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://q.130014.xyz/2021/11/01/Figure-2021-11-01-201444.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon-32x32-next.png">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/apple-touch-icon-next.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+        
+      
+    
+    <!-- title -->
+    <title>♥初体験♥数值求解一维谐振子本征问题</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/bio/">项目</a></li><!--
+     --><!--
+       --><li><a href="/bangumis/">二次元</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/2021/4520bd72.html"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2021/68f79f3e.html"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ayahccw.xyz/2021/4f2e36c8.html"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ayahccw.xyz/2021/4f2e36c8.html&text=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ayahccw.xyz/2021/4f2e36c8.html&is_video=false&description=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=♥初体験♥数值求解一维谐振子本征问题&body=Check out this article: https://ayahccw.xyz/2021/4f2e36c8.html"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ayahccw.xyz/2021/4f2e36c8.html&name=♥初体験♥数值求解一维谐振子本征问题&description=这是我第一次干和“科学计算”相关的事。之前虽然一直惦记着Scientific Computation，但实际上连Import Numpy都没有干过。于是在这个作业的驱动(?)下，我写了第一个有用的Python程序。虽然结果的代码量很少，但过程实属是历尽坎坷，有一些记录的价值和趣味在。"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ayahccw.xyz/2021/4f2e36c8.html&t=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#scientific-computation"><span class="toc-number">1.1.</span> <span class="toc-text">Scientific Computation?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF"><span class="toc-number">1.2.</span> <span class="toc-text">一些背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E4%B8%80%E7%BB%B4%E4%BD%93%E7%B3%BB%E7%9A%84%E6%95%B0%E5%80%BC%E6%B1%82%E8%A7%A3"><span class="toc-number">1.3.</span> <span class="toc-text">任意一维体系的数值求解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E4%B8%8E%E8%AE%A8%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">结果与讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3python%E7%AE%97%E5%BE%97%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">解决Python算得慢的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%88%91%E8%84%91%E5%AD%90%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text">解决我脑子的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E6%80%81%E7%94%BB%E5%9B%BE"><span class="toc-number">2.3.</span> <span class="toc-text">本征态画图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E5%B7%A5"><span class="toc-number">2.4.</span> <span class="toc-text">完工</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">3.</span> <span class="toc-text">结语</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        ♥初体験♥数值求解一维谐振子本征问题
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">C. AyaHC</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-10-31T15:46:48.000Z" class="dt-published" itemprop="datePublished">2021-10-31</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E7%89%A9%E7%90%86%E5%8C%96%E5%AD%A6/" rel="tag">物理化学</a>, <a class="p-category" href="/tags/%E8%AE%A1%E7%AE%97/" rel="tag">计算</a>, <a class="p-category" href="/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" rel="tag">量子力学</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="介绍">介绍</h1>
+<h2 id="scientific-computation">Scientific Computation?</h2>
+<p>这是我第一次干和“科学计算”相关的事。之前虽然一直惦记着Scientific Computation，但实际上连<code>Import Numpy</code>都没有干过。于是在这个作业的驱动(?)下，我写了第一个有用的Python程序。虽然结果的代码量很少，但过程实属是历尽坎坷，有一些记录的价值和趣味在。</p>
+<p>这也成为了这个博客的第一篇文章。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+<!-- more -->
+<h2 id="一些背景">一些背景</h2>
+<p>最近实在太忙，不然还想梳理一下到目前学习的内容。总的来说，老师想用一种不同的方法讲课，把一些理论力学、量子力学、统计力学的知识用“和化学相关”的方式串下来。我感觉这种课还是挺少见的。当然我也逐渐明白《化学中的数学》这个课名中的纠结与妥协——真的是很难说这是个什么课。</p>
+<p>量子力学的部分是按着 Sakurai 的书来引入的，即直接给出“量子态存于希尔伯特空间”、“可观测量对应厄米算符”的公理化体系。接下来，我们给出动量算符的形式，解出了动量本征态（波函数）。之后进入了“一维无穷深势阱”，要做的是解哈密顿量的本征体系。一维无穷深势阱的势能是这个： <span class="math display">\[
+V(x)= 0 \text{ }(-L/2 \leq x \leq L/2)
+\]</span> <span class="math display">\[
+V(x)=\infty,\text{otherwise}
+\]</span></p>
+<p>在势阱的内部，哈密顿量只有动能项：<span class="math inline">\(\hat{H}=\hat{p}^2\big/2m\)</span> .</p>
+<p>利用相容算符有共同本征态的性质，将哈密顿量的本征态写成（一对正负的）动量本征态的线性组合，由边值条件解出了系数。然后就得到了一维无穷深势阱的本征波函数： <span class="math display">\[
+\braket{x|\psi_n}=\sqrt{\frac{2}{L} }\sin\left(\frac{n\pi(x+L/2)}{L}\right)
+\]</span> 以及对应的能量本征值： <span class="math display">\[
+E=\frac{\hbar^2}{2m}\left(\frac{n\pi}{L}\right)^2
+\]</span> 量子数n在这里取正整数，因为对于sin函数而言，负的n只有相位上的区别，由波函数的相位自由度可以弥补。</p>
+<p>至此我们拿到了这个本征问题的解。可以证明，这一组解构成了一个正交完备基组，可用来表出希尔伯特空间里所有的（可观测）态（其实就是傅里叶级数）。接下来，我们用这一个模型导出了配分函数等。在研究了“分子的平动”后，我们开始研究振动。于是就用到了谐振子模型。</p>
+<h2 id="任意一维体系的数值求解">任意一维体系的数值求解</h2>
+<p>既然我们知道无穷深势阱的解是一组完备基，那么可以用来表出任意我们想要的本征态。求解本征问题会变为求级数的系数，进一步地会变成一个矩阵对角化问题。为什么要用复杂的级数形式来求解呢？这是因为大多实际体系是无法给出解析解的。对于化学而言关注的总是数值解。</p>
+<p>既然要做计算，我们就不能让n趋向无穷了，而是进行一个截断。得到N个“近似完备基组”，然后通过结果的收敛性来判断取值的合理（调参捏）。到了有限维，算符就便乘了我们熟悉的矩阵（厄米矩阵hso）。波函数自然也是要离散化的，也成为了一个很长的向量。</p>
+<p>具体来讲，我们要求解的本征问题长成这样： <span class="math display">\[
+\hat{H}\ket{\psi_n}=\varepsilon_n\ket{\psi_n}
+\]</span> 我们令解组成的矩阵<span class="math inline">\((\psi_1,\psi_2,\dots,\psi_n)={A}\)</span> ，令上面提到的已知基组<span class="math inline">\((\phi_1,\phi_2,\dots,\phi_n)=B\)</span> ，线性表出则可以用一个系数矩阵<span class="math inline">\(C\)</span>写成： <span class="math display">\[
+A=CB
+\]</span> 求解这个系数矩阵的方式就是：确定<span class="math inline">\(\hat{H}\)</span>在基组<span class="math inline">\(B\)</span>下的矩阵表示，然后对角化 <span class="math display">\[
+\hat{H}=C\lambda C^\dagger
+\]</span> 然后就有 <span class="math display">\[
+\hat{H}(CB)=\lambda (CB)
+\]</span> <span class="math inline">\(\lambda\)</span>的对角元就是本征值，厄米矩阵的性质保证了它们都是实数。<span class="math inline">\(CB\)</span>就包含了对应的各个本征矢。[写的时候有点仓促草]</p>
+<p>所以要做的关键就是求哈密顿算符的矩阵元。等一下，<span class="math inline">\(\hat{H}=\hat{T}+\hat{V}\)</span>，动能项我们已经知道了，是一个对角元是<span class="math inline">\(E_n\)</span>的对角矩阵（和之前的并无区别）。需要求的是势能算符的矩阵元，方法是在位置空间展开单位算符： <span class="math display">\[
+V_{mn}=\bra{\phi_m}\hat{V}\ket{\phi_n}=\int_{-L/2}^{L/2}\phi_m^*(x)V(x)\phi_n(x) \mathrm{d}x
+\]</span> 积分可以用梯形积分的方法进行数值计算。</p>
+<p>我们要算的一维谐振子体系的势能为： <span class="math display">\[
+V(x)=\frac{1}{2}m\omega^2x^2
+\]</span> 为简便，令<span class="math inline">\(\hbar=1,m=1,\omega=2\)</span>, 而N，L，以及算积分时的划分点数量S是要调的参数。</p>
+<h1 id="结果与讨论">结果与讨论</h1>
+<h2 id="解决python算得慢的问题">解决Python算得慢的问题</h2>
+<p>众所周知，Python是一种解释型语言，比C/C++、Fortran之类速度慢几个数量级。虽然不是用不了，但显然搞快点会更爽。办法就是”向量化“，然后交给Numpy库。Numpy背后是C代码，且带有了一些高级的线性代数算法，所以比Python自带的循环之类快得很。这是助教教给我们的策略，我在看懂以后就直接用了。而且这使得代码看起来很简洁。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ns=np.arange(<span class="number">1</span>,N+<span class="number">1</span>)</span><br><span class="line"><span class="comment">#build T matrix</span></span><br><span class="line">t_ev=(<span class="number">1</span>/<span class="number">2</span>)*(np.pi/L)**<span class="number">2</span> * ns**<span class="number">2</span> <span class="comment">#eigen values</span></span><br><span class="line">Tmat=np.diag(t_ev)</span><br></pre></td></tr></table></figure>
+<p>这是动能的对角矩阵，构建方法就像是直接对n维向量作用一个函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#base vector v(x,n)</span></span><br><span class="line">nx=np.outer(xs,ns)</span><br><span class="line">bases = np.sin((np.pi/L) * nx)</span><br></pre></td></tr></table></figure>
+<p>基向量的构建方式是我很难想到的。事实上写成一个矩阵是我在写这篇文章时才梳理清楚的，虽然说本来就该这样……但线性代数的知识属实是忘了一些。在这里直接由x和n”张成“了一个矩阵，然后用我们的基组的表达式进行赋值，同样是避免了循环的出现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#potential funcion</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fp</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*x**<span class="number">2</span></span><br><span class="line"><span class="comment">#build V matrix</span></span><br><span class="line">xs=np.linspace(<span class="number">0</span>,L,S)</span><br><span class="line">dx=xs[<span class="number">1</span>]-xs[<span class="number">0</span>]</span><br><span class="line">diag_fp = np.diag(fp(xs-L/<span class="number">2</span>))</span><br><span class="line">Vmat = np.dot(bases.T,np.dot(diag_fp,bases)) * <span class="number">2</span>/L *dx</span><br></pre></td></tr></table></figure>
+<p>定义一个势能。注意到为了计算的方便，令x的取值为0到L，这样势能函数也应当作相应的平移。我忘了这样的事因而卡了一段时间。</p>
+<p>而当我们的基组写成了矩阵，求势能矩阵元就不用像定义种那般，用一个个基分别算积分。在这里就是三个矩阵相乘的形式（x已经离散化过了捏）。</p>
+<p>那么事情基本上就做完了，然后就是对角化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hmat = Tmat + Vmat</span><br><span class="line">H_e = np.linalg.eig(Hmat)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sorted</span>(H_e[<span class="number">0</span>]))</span><br></pre></td></tr></table></figure>
+<p>用到Numpy库里的<code>ligalg.eig()</code>，它得到的第一个<code>array</code>是特征值。但是……</p>
+<h2 id="解决我脑子的问题">解决我脑子的问题</h2>
+<p>run出来的结果不符合设想。本征值<strong>应当</strong>是 <span class="math display">\[
+\varepsilon_n = (n+\frac{1}{2})\hbar\omega
+\]</span> 但是输出了一堆奇怪的数……</p>
+<p>我坐在理教二层，调试了近三个小时，心态大崩。一直以为是势能矩阵写错了，后来又怀疑是参数问题，然而每调一回参数结果都会向意料外的方向发展。求助于同学才发现是，动能矩阵少写了n上的平方……</p>
+<p>脑子的问题仍需要解决。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1.0000000001548224</span>, <span class="number">3.000000000003902</span>, <span class="number">5.000000000046899</span>, <span class="number">7.000000000002921</span>, <span class="number">9.000000000025032</span>, <span class="number">11.000000000003851</span>, <span class="number">13.000000000021144</span>, <span class="number">15.00000000000944</span>, <span class="number">17.000000000017277</span>, <span class="number">19.00000000005756</span>, <span class="number">21.00000000053884</span>, <span class="number">23.00000000387303</span>, <span class="number">25.000000029432897</span>, <span class="number">27.000000170822677</span>, <span class="number">29.000001044443803</span>, <span class="number">31.000004965387035</span>, <span class="number">33.00002472004807</span>, <span class="number">35.000097260956586</span>, <span class="number">37.000396429511035</span>, <span class="number">39.0012947512046</span>] <span class="comment">#20 eigenvalues</span></span><br></pre></td></tr></table></figure>
+<h2 id="本征态画图">本征态画图</h2>
+<p>首先，我们要对本征态（向量）按本征值进行排序。这部分由 Nipporita 提供了帮助，原因是我对于 Python 的掌握实属不彳亍。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">H_eva, H_eve = np.linalg.eig(Hmat)</span><br><span class="line">H_e = [(H_eva[i], H_eve.T[i]) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N)]</span><br><span class="line">H_e_sort = <span class="built_in">sorted</span>(H_e, key = <span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>([i[<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> H_e_sort[:<span class="number">20</span>]]) <span class="comment">#new method</span></span><br></pre></td></tr></table></figure>
+<p>但是我接下来画出的是一坨奇怪的东西。和想象中的完全不同，甚至处处不连续。</p>
+<p>在修改时破坏了 Nipporita 留下的代码，不会改回了，于是又求助。顺便发现了我的问题：我试图对系数矩阵画图而没有乘上基组（什么脑子）。本质上是在没有想明白原理的时候就开干了，但这没有带来任何的方便。</p>
+<p>最终有了画图的代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xs_=np.linspace(-L/<span class="number">2</span>,L/<span class="number">2</span>,S)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>): <span class="comment">#plot</span></span><br><span class="line">    plt.scatter(xs_,(np.dot(bases, H_e_sort[i][<span class="number">1</span>])), s = <span class="number">0.5</span>)</span><br></pre></td></tr></table></figure>
+<p>以及图：</p>
+<figure>
+<img src="https://q.130014.xyz/2021/11/01/Figure-2021-11-01-201444.png" alt="Figure-2021-11-01-201444.png" /><figcaption aria-hidden="true">Figure-2021-11-01-201444.png</figcaption>
+</figure>
+<p>以下是换了一种方法，把波函数在纵向排开：</p>
+<figure>
+<img src="https://q.130014.xyz/2021/10/31/fadcc72eabf47dd899ca9941c06a0f31.png" alt="fadcc72eabf47dd899ca9941c06a0f31.png" /><figcaption aria-hidden="true">fadcc72eabf47dd899ca9941c06a0f31.png</figcaption>
+</figure>
+<h2 id="完工">完工</h2>
+<p>好！</p>
+<h1 id="结语">结语</h1>
+<p>没什么可说的，这个文章没有价值。该干的事情还有很多。写这个只是为了测试一下 Hexo-NexT 的 MathJax 渲染以及代码高亮效果。</p>
+<p>我被更多的作业狂暴鸿儒。等有空了再来维护博客。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/bio/">项目</a></li>
+        
+          <li><a href="/bangumis/">二次元</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#scientific-computation"><span class="toc-number">1.1.</span> <span class="toc-text">Scientific Computation?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF"><span class="toc-number">1.2.</span> <span class="toc-text">一些背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E4%B8%80%E7%BB%B4%E4%BD%93%E7%B3%BB%E7%9A%84%E6%95%B0%E5%80%BC%E6%B1%82%E8%A7%A3"><span class="toc-number">1.3.</span> <span class="toc-text">任意一维体系的数值求解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E4%B8%8E%E8%AE%A8%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">结果与讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3python%E7%AE%97%E5%BE%97%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">解决Python算得慢的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%88%91%E8%84%91%E5%AD%90%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text">解决我脑子的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E6%80%81%E7%94%BB%E5%9B%BE"><span class="toc-number">2.3.</span> <span class="toc-text">本征态画图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E5%B7%A5"><span class="toc-number">2.4.</span> <span class="toc-text">完工</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">3.</span> <span class="toc-text">结语</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ayahccw.xyz/2021/4f2e36c8.html"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ayahccw.xyz/2021/4f2e36c8.html&text=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ayahccw.xyz/2021/4f2e36c8.html&is_video=false&description=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=♥初体験♥数值求解一维谐振子本征问题&body=Check out this article: https://ayahccw.xyz/2021/4f2e36c8.html"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ayahccw.xyz/2021/4f2e36c8.html&title=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ayahccw.xyz/2021/4f2e36c8.html&name=♥初体験♥数值求解一维谐振子本征问题&description=这是我第一次干和“科学计算”相关的事。之前虽然一直惦记着Scientific Computation，但实际上连Import Numpy都没有干过。于是在这个作业的驱动(?)下，我写了第一个有用的Python程序。虽然结果的代码量很少，但过程实属是历尽坎坷，有一些记录的价值和趣味在。"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ayahccw.xyz/2021/4f2e36c8.html&t=♥初体験♥数值求解一维谐振子本征问题"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    C. AyaHC
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/bio/">项目</a></li><!--
+     --><!--
+       --><li><a href="/bangumis/">二次元</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
